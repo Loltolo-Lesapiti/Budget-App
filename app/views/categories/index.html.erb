@@ -4,10 +4,20 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <%= link_to category_path(category.id), class:"link" do %>
+      <div class="container">
+      <%= image_tag(category.icon, class: "img-fluid", alt: "Responsive image") %>
+      <div class="container">
+      <h4><%=category.name=%></>
+      <p>Time it was created</p>
+      </div>
+      <h4>
+      <%=category.budgets.sum(:amount)%>
+      </h4>
+
+      
+      <div>
+  <% end %>
   <% end %>
 </div>
 
