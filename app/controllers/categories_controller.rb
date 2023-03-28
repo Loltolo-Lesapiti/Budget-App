@@ -3,11 +3,15 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.where(user_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /categories/1 or /categories/1.json
-  def show; end
+  def show;
+  @category = Category.find(params[:id])
+  @budgets = @category.budgets
+  @total_amount = @budgets.sum(&:amount)
+  end
 
   # GET /categories/new
   def new
