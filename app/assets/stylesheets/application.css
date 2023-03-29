@@ -37,6 +37,7 @@ a {
   height: 50px;
   font-size: larger;
   font-weight: 700;
+  margin-top: 15px;
 }
 
 .img-setting {
@@ -66,4 +67,9 @@ h3 {
   height: 300px;
   overflow: auto;
   margin-bottom: 20px;
+}
+
+.cat-nav{
+  font-size: x-large;
+  font-weight: bolder;
 }
