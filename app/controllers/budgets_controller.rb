@@ -1,17 +1,9 @@
 class BudgetsController < ApplicationController
   before_action :set_budget, only: %i[show edit update destroy]
 
-  # GET /budgets or /budgets.json
-  def index
-    @budgets = Budget.all
-  end
-
-  # GET /budgets/1 or /budgets/1.json
-  def show; end
-
-  # GET /budgets/new
   def new
     @budget = Budget.new
+    @categories = Category.all
   end
 
   # GET /budgets/1/edit
@@ -19,29 +11,18 @@ class BudgetsController < ApplicationController
 
   # POST /budgets or /budgets.json
   def create
-    @budget = Budget.new(budget_params)
+    @categories = current_user.categories
+    params = budget_params
+    @budget = Budget.new(name: params[:name], amount: params[:amount])
+    @budget.user = current_user
 
-    respond_to do |format|
-      if @budget.save
-        format.html { redirect_to budget_url(@budget), notice: 'Budget was successfully created.' }
-        format.json { render :show, status: :created, location: @budget }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @budget.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /budgets/1 or /budgets/1.json
-  def update
-    respond_to do |format|
-      if @budget.update(budget_params)
-        format.html { redirect_to budget_url(@budget), notice: 'Budget was successfully updated.' }
-        format.json { render :show, status: :ok, location: @budget }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @budget.errors, status: :unprocessable_entity }
-      end
+    if @budget.save
+      @category = Category.find(params[:category_id])
+      @category.budgets << @budget
+      redirect_to category_path(params[:category_id]), notice: 'Budget was successfully created.'
+    else
+      flash[:danger] = 'Budget was not created.'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -64,6 +45,6 @@ class BudgetsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def budget_params
-    params.require(:budget).permit(:name, :amount, :user_id)
+    params.permit(:name, :amount, :category_id)
   end
 end
