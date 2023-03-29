@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand mx-3" href="#">Taas Budgets</a>
+<%= link_to 'BUGETAAS', root_path, class:'nav-link navbar-brand font-weight-bold mx-3 logo' %>
   <button class="navbar-toggler order-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,12 +7,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto ms-5 myLinks">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Category</a>
+      <%= link_to 'Category', root_path, class:'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Transactions</a>
+        <%= link_to 'Transactions', root_path, class:'nav-link' %>
       </li>
     </ul>
-    <a class="nav-link text-light log-out" href="#">Log out</a>
+    <%= link_to 'Logout', destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link text-light log-out" %>
   </div>
 </nav>
