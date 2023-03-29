@@ -13,48 +13,57 @@
  *= require_tree .
  *= require_self
  */
- body{
-   background: #e1e6eb;
- }
- .categories{
-   background: whitesmoke;
- }
- .log-out{
-    margin-left: 75%;
- }
- a{
-   text-decoration: none;
- }
- .categories{
-   border: solid 0.5px;
-   margin-bottom: 15px;
- }
- .new-btn{
-   width: 50%;
-   margin: 0 25%;
-   height: 50px;
-   font-size: larger;
-   font-weight: 700;
- }
- .img-setting{
-   width: 200px;
-   height: auto;
-   margin-right: 20px;
- }
- h1,h5,p{
-   color: #434b54;
- }
- h3{
-   font-size: larger;
-   font-weight: 700;
-   color: #434b54;
- }
-.transactions{
-   border: solid 0.5px;
-   margin-bottom: 5px
+body {
+  background: #e1e6eb;
 }
-.overflow{
-   height: 300px; 
-   overflow: auto;
-   margin-bottom: 20px;
+
+.log-out {
+  margin-left: 75%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.categories {
+  border: solid 0.5px;
+  margin-bottom: 15px;
+  background: whitesmoke;
+}
+
+.new-btn {
+  width: 50%;
+  margin: 0 25%;
+  height: 50px;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.img-setting {
+  width: 200px;
+  height: auto;
+  margin-right: 20px;
+}
+
+h1,
+h5,
+p {
+  color: #434b54;
+}
+
+h3 {
+  font-size: larger;
+  font-weight: 700;
+  color: #434b54;
+}
+
+.transactions {
+  border: solid 0.5px;
+  margin-bottom: 5px;
+}
+
+.overflow {
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 20px;
 }

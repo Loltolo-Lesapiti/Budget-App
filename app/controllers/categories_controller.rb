@@ -7,10 +7,10 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1 or /categories/1.json
-  def show;
-  @category = Category.find(params[:id])
-  @budgets = @category.budgets
-  @total_amount = @budgets.sum(&:amount)
+  def show
+    @category = Category.find(params[:id])
+    @budgets = @category.budgets
+    @total_amount = @budgets.sum(&:amount)
   end
 
   # GET /categories/new
