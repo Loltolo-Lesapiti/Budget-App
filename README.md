@@ -33,10 +33,12 @@ The Budget app was built with:
 
 - Ruby On Rails
 - PostgreSQL
+- Rubocop
+- Bootstrap
 
 ### Live Demo
 
-You can view a live demo of the Recipe App at COMING SOON.
+[Live Demo Link](https://www.google.com)
 
 ## Getting Started
 
