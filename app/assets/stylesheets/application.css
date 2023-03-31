@@ -32,12 +32,20 @@ a {
 }
 
 .new-btn {
-  width: 50%;
-  margin: 0 25%;
   height: 50px;
   font-size: larger;
   font-weight: 700;
-  margin-top: 15px;
+  border: solid 2px white;
+  color: white;
+}
+
+.button-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgb(29, 102, 29);
 }
 
 .img-setting {
@@ -73,3 +81,4 @@ h3 {
   font-size: x-large;
   font-weight: bolder;
 }
+

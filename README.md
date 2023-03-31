@@ -40,6 +40,10 @@ The Budget app was built with:
 
 [Live Demo Link](https://budgetaas.onrender.com/)
 
+### Video Demo
+
+[Live Demo Link](https://drive.google.com/file/d/1s7K87gog_OzKEHSSs0ttUtlTDkrvz3eQ/view?usp=share_link)
+
 ## Getting Started
 
 To get a local copy up and running, follow these steps:
@@ -65,6 +69,8 @@ To run this project, you'll need to install:
 `bundle install`
 
 3. Set up the database:
+
+`rails db:drop`
 
 `rails db:create`
 
