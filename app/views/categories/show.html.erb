@@ -1,0 +1,25 @@
+<section>
+<div class="container d-flex categories">
+<img src=<%=@category.icon %> class=" img-fluid rounded img-setting " alt="Responsive image">
+<div class="container">
+<h3><%=@category.name=%></h3><p><%= @category.created_at.strftime("%d %h %Y") %></p>
+</div>
+<h5>$<%=@category.budgets.sum(:amount)%></h5>
+</div>
+    <div class = 'container overflow'>
+            <% @budgets.each_with_index do |budget, index| %>
+                    <div class="container d-flex justify-content-around bg-white p-3 transactions ">
+                    <div class="container">
+                    <h3><%= budget.name %></h3><p><%= budget.created_at.strftime("%d %h %Y") %></p>
+                    </div>
+                    <h5>$<%= budget.amount %> </h5>
+                    </div>
+            <% end %>
+        </div>
+
+    </div>  
+
+<div class="button-container">
+  <%= link_to 'Add transaction', new_budget_path(@category.id), class:"btn new-btn form-control" %>
+</div>
+</section>

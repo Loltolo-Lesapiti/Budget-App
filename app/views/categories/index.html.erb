@@ -1,0 +1,17 @@
+<div class="container-fluid main">
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category.id), class:"link" do %>
+    <div class="container d-flex categories">
+    <img src=<%= category.icon %> class=" img-fluid rounded img-setting " alt="Responsive image">
+    <div class="container">
+    <h3><%=category.name %></h3><p><%= category.created_at.strftime("%d %h %Y")%></p>
+    </div>
+    <h5>$<%=category.budgets.sum(:amount)%></h5>
+    </div>
+  <% end %>
+  <% end %>
+  <div class="button-container">
+  <%= link_to "Add Category", new_category_path, class: "btn new-btn form-control" %>
+  </div>
+</div>
+

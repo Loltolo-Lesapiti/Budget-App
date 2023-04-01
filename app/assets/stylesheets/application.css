@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  background: #e1e6eb;
+}
+
+.log-out {
+  margin-left: 75%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.categories {
+  border: solid 0.5px;
+  margin-bottom: 15px;
+  background: whitesmoke;
+}
+
+.new-btn {
+  height: 50px;
+  font-size: larger;
+  font-weight: 700;
+  border: solid 2px white;
+  color: white;
+}
+
+.button-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgb(29, 102, 29);
+}
+
+.img-setting {
+  width: 200px;
+  height: auto;
+  margin-right: 20px;
+}
+
+h1,
+h5,
+p {
+  color: #434b54;
+}
+
+h3 {
+  font-size: larger;
+  font-weight: 700;
+  color: #434b54;
+}
+
+.transactions {
+  border: solid 0.5px;
+  margin-bottom: 5px;
+}
+
+.overflow {
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.cat-nav {
+  font-size: x-large;
+  font-weight: bolder;
+}
